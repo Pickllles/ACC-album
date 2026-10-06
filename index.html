@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="长沙 ACC，2026 年十月。十五张照片，一本可翻阅的三维相册。" />
+    <title>ACC · 3D 相册</title>
+    <script type="module" crossorigin src="./assets/index-De9gBLb7.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BSzy79zB.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <div class="meteor-field" aria-hidden="true">
+        <span style="--x:30%;--y:-6%;--delay:-1s;--duration:11s"></span>
+        <span style="--x:83%;--y:-12%;--delay:-5s;--duration:13s"></span>
+        <span style="--x:112%;--y:9%;--delay:-8s;--duration:12s"></span>
+        <span style="--x:58%;--y:-20%;--delay:-10s;--duration:15s"></span>
+        <span style="--x:117%;--y:40%;--delay:-3s;--duration:16s"></span>
+        <span style="--x:22%;--y:24%;--delay:-7s;--duration:14s"></span>
+      </div>
+      <canvas id="book-scene" aria-label="拖动纸页翻阅 ACC 相册" tabindex="0"></canvas>
+      <nav class="library" aria-label="选择相册" id="library"></nav>
+      <div class="reader-controls" aria-label="翻页控制">
+        <button class="page-button" id="previous-page" type="button" aria-label="上一页">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m14 6-6 6 6 6" /></svg>
+        </button>
+        <span id="page-state" aria-live="polite"><strong id="page-current">封面 · 1</strong><span id="page-total"> / 20 页</span></span>
+        <button class="page-button" id="next-page" type="button" aria-label="下一页">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m10 6 6 6-6 6" /></svg>
+        </button>
+        <form id="page-jump" title="页码包含封面和封底">
+          <label for="page-number">页码</label>
+          <input id="page-number" type="number" min="1" max="20" step="1" value="1" required aria-label="跳转到页码" />
+          <button id="jump-button" type="submit" aria-label="跳转" title="跳转（Enter）"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5" /></svg></button>
+        </form>
+      </div>
+      <div class="loading-card" id="loading-card" role="status" aria-live="polite" aria-hidden="true" hidden>
+        <span class="loading-pulse"></span>
+        <span class="sr-only" id="loading-copy">正在准备相册</span>
+      </div>
+    </main>
+  </body>
+</html>
